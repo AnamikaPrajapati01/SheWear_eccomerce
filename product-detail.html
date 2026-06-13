@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | SheWear</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .product-detail-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .breadcrumb-item a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .product-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-price-detail {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        .size-btn {
+            border: 1px solid #ddd;
+            background: white;
+            padding: 10px 20px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .size-btn:hover,
+        .size-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="announcement-bar"> FREE STANDARD SHIPPING ON ORDERS OVER £100 </div>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand mx-auto" href="index.html">SheWear</a>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-5">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page" id="breadcrumb-product-name">Product</li>
+            </ol>
+        </nav>
+
+        <div class="row g-5">
+            <div class="col-12 col-md-6">
+                <img id="main-product-img" src="" class="product-detail-img" alt="Product Image">
+            </div>
+            <div class="col-12 col-md-6">
+                <h1 class="product-title" id="product-title">Product Name</h1>
+                <p class="product-price-detail" id="product-price">£0.00</p>
+
+                <div class="mb-4">
+                    <h5 class="footer-heading" style="margin-bottom: 15px;">Description</h5>
+                    <p class="text-muted">Experience luxury with our hand-picked collection. This piece combines
+                        contemporary design with timeless elegance, crafted from the finest materials for a perfect fit
+                        and feel.</p>
+                </div>
+
+                <div class="mb-4">
+                    <h5 class="footer-heading" style="margin-bottom: 15px;">Select Size</h5>
+                    <div class="d-flex flex-wrap">
+                        <button class="size-btn">UK 6</button>
+                        <button class="size-btn">UK 8</button>
+                        <button class="size-btn">UK 10</button>
+                        <button class="size-btn">UK 12</button>
+                    </div>
+                </div>
+
+                <button class="btn btn-luxury w-100 py-3 mb-4">Add to Bag</button>
+
+                <div class="accordion accordion-flush" id="productAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne">
+                                Delivery & Returns
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#productAccordion">
+                            <div class="accordion-body text-muted small">
+                                Complimentary standard delivery on orders over £100. Returns accepted within 28 days.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p class="text-muted">&copy; 2024 SheWear. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Simple JS to populate data from URL parameters
+        window.onload = function () {
+            const params = new URLSearchParams(window.location.search);
+            const name = params.get('name') || 'Elegant Piece';
+            const price = params.get('price') || '£0.00';
+            const img = params.get('img') || 'https://images.unsplash.com/photo-1515347619252-60a4bdad8880';
+
+            document.getElementById('product-title').innerText = name;
+            document.getElementById('breadcrumb-product-name').innerText = name;
+            document.getElementById('product-price').innerText = price;
+            document.getElementById('main-product-img').src = img;
+
+            // Handle size button clicks
+            const sizeBtns = document.querySelectorAll('.size-btn');
+            sizeBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    sizeBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                });
+            });
+        };
+    </script>
+</body>
+
+</html>

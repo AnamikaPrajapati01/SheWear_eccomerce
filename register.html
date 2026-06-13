@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | SheWear</title>
+    <meta name="description"
+        content="Join the SheWear community. Create an account for a faster checkout and exclusive offers.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .register-container {
+            max-width: 500px;
+            margin: 80px auto;
+            padding: 40px;
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .auth-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .auth-header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+
+        .form-control:not(:placeholder-shown):valid {
+            border-color: #198754;
+            padding-right: calc(1.5em + 0.75rem);
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right calc(0.375em + 0.1875rem) center;
+            background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+        }
+
+        .form-control:not(:placeholder-shown):invalid {
+            border-color: #dc3545;
+            padding-right: calc(1.5em + 0.75rem);
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right calc(0.375em + 0.1875rem) center;
+            background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+        }
+
+        /* Feedback messages (hidden by default, shown based on validity) */
+        .invalid-feedback-custom {
+            display: none;
+            width: 100%;
+            margin-top: 0.25rem;
+            font-size: 0.875em;
+            color: #dc3545;
+        }
+
+        .form-control:not(:placeholder-shown):invalid~.invalid-feedback-custom {
+            display: block;
+        }
+
+        .form-check-input:invalid~.form-check-label {
+            color: #dc3545;
+        }
+
+        .btn-luxury-wide {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .auth-footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .auth-footer a {
+            color: var(--primary-color);
+            text-decoration: underline;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        FREE STANDARD SHIPPING ON ORDERS OVER £100
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <a class="navbar-brand mx-auto" href="index.html">SheWear</a>
+
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#">New In</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown">Clothing</a>
+                        <ul class="dropdown-menu border-0 shadow-sm p-3">
+                            <li><a class="dropdown-item" href="dresses.html">Dresses</a></li>
+                            <li><a class="dropdown-item" href="tops.html">Tops</a></li>
+                            <li><a class="dropdown-item" href="skirts.html">Skirts</a></li>
+                            <li><a class="dropdown-item" href="trousers.html">Trousers</a></li>
+                            <li><a class="dropdown-item" href="knitwear.html">Knitwear</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Dresses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Best Sellers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-icons d-flex align-items-center">
+                <a href="#" class="nav-link px-2"><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href="register.html" class="nav-link px-2 active"><i class="fa-regular fa-user"></i></a>
+                <a href="#" class="nav-link px-2 position-relative">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark"
+                        style="font-size: 0.6rem;">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="register-container">
+            <div class="auth-header">
+                <h1>Create Account</h1>
+                <p>Register to enjoy exclusive benefits and a faster checkout experience.</p>
+            </div>
+
+            <form action="#" method="POST">
+                <div class="mb-4">
+                    <label for="fullName" class="form-label-luxury">Full Name</label>
+                    <input type="text" class="form-control form-luxury" id="fullName" name="fullName" placeholder=" "
+                        required minlength="3">
+                    <div class="invalid-feedback-custom">Please enter your full name (minimum 3 characters).</div>
+                </div>
+
+                <div class="mb-4">
+                    <label for="email" class="form-label-luxury">Email Address</label>
+                    <input type="email" class="form-control form-luxury" id="email" name="email" placeholder=" "
+                        required>
+                    <div class="invalid-feedback-custom">Please enter a valid email address.</div>
+                </div>
+
+                <div class="mb-4">
+                    <label for="password" class="form-label-luxury">Password</label>
+                    <input type="password" class="form-control form-luxury" id="password" name="password"
+                        placeholder=" " required minlength="8">
+                    <div class="invalid-feedback-custom">Password must be at least 8 characters long.</div>
+                </div>
+
+                <div class="mb-4">
+                    <label for="confirmPassword" class="form-label-luxury">Confirm Password</label>
+                    <input type="password" class="form-control form-luxury" id="confirmPassword" name="confirmPassword"
+                        placeholder=" " required>
+                    <div class="invalid-feedback-custom">Please confirm your password.</div>
+                </div>
+
+                <div class="mb-4 form-check">
+                    <input type="checkbox" class="form-check-input" id="terms" required>
+                    <label class="form-check-label" for="terms" style="font-size: 0.85rem;">
+                        I agree to the <a href="#" class="text-dark">Terms & Conditions</a> and <a href="#"
+                            class="text-dark">Privacy Policy</a>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-luxury btn-luxury-wide">Register Now</button>
+            </form>
+
+            <div class="auth-footer">
+                Already have an account? <a href="#">Sign In</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <h4 class="footer-heading">Help & Information</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Returns Policy</a></li>
+                        <li><a href="#">How To Return</a></li>
+                        <li><a href="#">Student Discount</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <h4 class="footer-heading">About</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">As Seen In The Press</a></li>
+                        <li><a href="#">Modern Slavery Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <h4 class="footer-heading">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Press Enquiries</a></li>
+                        <li><a href="mailto:care@shewear.com">care@shewear.com</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-4 text-center text-md-start">
+                    <h4 class="footer-heading">Follow Us</h4>
+                    <div class="social-links align-items-center">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright text-center">
+                <p>Copyright © 2024 SheWear.com. All rights reserved. | <a href="#">Terms & Conditions</a> | <a
+                        href="#">Privacy & Cookies</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

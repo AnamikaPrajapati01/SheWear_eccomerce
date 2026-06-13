@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & KYC | SheWear</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .kyc-section {
+            padding: 80px 0;
+            background-color: var(--accent-color);
+        }
+
+        .contact-card {
+            border: none;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+            padding: 50px;
+            background: white;
+            border-radius: 0;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-label {
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .form-control {
+            border-radius: 0;
+            border: 1px solid #e0e0e0;
+            padding: 15px;
+            font-size: 0.9rem;
+            transition: var(--transition-smooth);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: none;
+            background-color: #fafafa;
+        }
+
+        .kyc-upload-box {
+            border: 1px dashed #ccc;
+            padding: 40px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            background: #fdfdfd;
+            margin-top: 5px;
+        }
+
+        .kyc-upload-box:hover {
+            border-color: var(--primary-color);
+            background: #f8f8f8;
+        }
+
+        .contact-info-item {
+            margin-bottom: 40px;
+        }
+
+        .contact-info-item i {
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            display: block;
+            color: var(--primary-color);
+        }
+
+        .contact-info-title {
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            margin-bottom: 10px;
+        }
+
+        .contact-info-text {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .kyc-header {
+            border-bottom: 1px solid #eee;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+        }
+
+        .kyc-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            background: #000;
+            color: #fff;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 15px;
+        }
+
+        .breadcrumb-luxury {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin-bottom: 40px;
+        }
+
+        .breadcrumb-luxury li {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+        }
+
+        .breadcrumb-luxury li::after {
+            content: '/';
+            margin: 0 15px;
+        }
+
+        .breadcrumb-luxury li:last-child::after {
+            display: none;
+        }
+
+        .breadcrumb-luxury li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        .breadcrumb-luxury li a:hover {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        FREE STANDARD SHIPPING ON ORDERS OVER £100
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <a class="navbar-brand mx-auto" href="index.html">SheWear</a>
+
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#">New In</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown">Clothing</a>
+                        <ul class="dropdown-menu border-0 shadow-sm p-3">
+                            <li><a class="dropdown-item" href="dresses.html">Dresses</a></li>
+                            <li><a class="dropdown-item" href="tops.html">Tops</a></li>
+                            <li><a class="dropdown-item" href="skirts.html">Skirts</a></li>
+                            <li><a class="dropdown-item" href="trousers.html">Trousers</a></li>
+                            <li><a class="dropdown-item" href="knitwear.html">Knitwear</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="dresses.html">Dresses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Best Sellers</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-icons d-flex align-items-center">
+                <a href="#" class="nav-link px-2"><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href="#" class="nav-link px-2"><i class="fa-regular fa-user"></i></a>
+                <a href="#" class="nav-link px-2 position-relative">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark"
+                        style="font-size: 0.6rem;">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="container mt-5 pt-4">
+        <ul class="breadcrumb-luxury">
+            <li><a href="index.html">Home</a></li>
+            <li>Contact & KYC</li>
+        </ul>
+        <h1 class="section-title">Get In Touch</h1>
+        <p class="text-center text-muted mb-5 mx-auto" style="max-width: 600px;">Whether you have a question about our
+            collections or need help with a verification process, our team is here to assist you.</p>
+    </section>
+
+    <!-- Main Content Section -->
+    <section class="kyc-section">
+        <div class="container">
+            <div class="row">
+                <!-- Form Column -->
+                <div class="col-12 col-lg-8">
+                    <div class="contact-card">
+                        <div class="kyc-header">
+                            <span class="kyc-badge">KYC Requirement</span>
+                            <h2 style="font-family: 'Playfair Display', serif; font-size: 1.8rem;">Profile Verification
+                            </h2>
+                            <p class="text-muted small">Please complete this form for secure account access and premium
+                                services.</p>
+                        </div>
+
+                        <form>
+                            <div class="row g-4">
+                                <!-- Contact Info -->
+                                <div class="col-12 col-md-6">
+                                    <label class="form-label-luxury">First Name</label>
+                                    <input type="text" class="form-control form-luxury" placeholder="Enter first name"
+                                        required>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label class="form-label-luxury">Last Name</label>
+                                    <input type="text" class="form-control form-luxury" placeholder="Enter last name"
+                                        required>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label class="form-label-luxury">Email Address</label>
+                                    <input type="email" class="form-control form-luxury"
+                                        placeholder="example@domain.com" required>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label class="form-label-luxury">Phone Number</label>
+                                    <input type="tel" class="form-control form-luxury" placeholder="+44 000 000 0000"
+                                        required>
+                                </div>
+
+                                <!-- KYC Specifics -->
+                                <div class="col-12 col-md-6">
+                                    <label class="form-label-luxury">Date of Birth</label>
+                                    <input type="date" class="form-control form-luxury" required>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label class="form-label-luxury">Nationality</label>
+                                    <select class="form-select border-0 bg-light p-3"
+                                        style="border-radius: 0; font-size: 0.9rem;">
+                                        <option selected>Select Nationality</option>
+                                        <option>British</option>
+                                        <option>American</option>
+                                        <option>European</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-12">
+                                    <label class="form-label-luxury">Permanent Address</label>
+                                    <textarea class="form-control form-luxury" rows="3"
+                                        placeholder="Flat, Street, City, Postcode" required></textarea>
+                                </div>
+
+                                <!-- Document Upload -->
+                                <div class="col-12 mt-4">
+                                    <label class="form-label-luxury d-block">Identity Documentation</label>
+                                    <p class="text-muted small mb-3">Upload a high-quality scan or photo of your
+                                        Passport or ID card.</p>
+
+                                    <div class="row g-3">
+                                        <div class="col-12 col-md-6">
+                                            <div class="kyc-upload-box">
+                                                <i class="fa-solid fa-id-card fa-2x mb-3 text-secondary"></i>
+                                                <p class="mb-1 fw-500">Document Front</p>
+                                                <p class="text-muted smallest">JPG, PNG or PDF (Max 5MB)</p>
+                                                <input type="file" hidden id="idFront">
+                                                <button type="button" class="btn btn-dark btn-sm mt-2 px-3"
+                                                    onclick="document.getElementById('idFront').click()">Choose
+                                                    File</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6">
+                                            <div class="kyc-upload-box">
+                                                <i class="fa-solid fa-camera fa-2x mb-3 text-secondary"></i>
+                                                <p class="mb-1 fw-500">Selfie Verification</p>
+                                                <p class="text-muted smallest">Photo holding your ID</p>
+                                                <input type="file" hidden id="idSelfie">
+                                                <button type="button" class="btn btn-dark btn-sm mt-2 px-3"
+                                                    onclick="document.getElementById('idSelfie').click()">Choose
+                                                    File</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label class="form-label-luxury">Message (Optional)</label>
+                                    <textarea class="form-control form-luxury" rows="4"
+                                        placeholder="How can we help you today?"></textarea>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="termsCheck" required>
+                                        <label class="form-check-label small text-muted" for="termsCheck">
+                                            I agree to the processing of my personal data for verification purposes in
+                                            accordance with the <a href="#" class="text-dark fw-bold">Privacy
+                                                Policy</a>.
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 text-center mt-5">
+                                    <button type="submit" class="btn btn-luxury w-100 py-3">Submit for
+                                        Verification</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Info Column -->
+                <div class="col-12 col-lg-4 mt-5 mt-lg-0">
+                    <div class="ps-lg-5">
+                        <div class="contact-info-item">
+                            <i class="fa-solid fa-headset"></i>
+                            <h4 class="contact-info-title">Support Team</h4>
+                            <p class="contact-info-text">Our dedicated support team is available to help you with any
+                                queries.<br><strong>Response time: 24-48 hours</strong></p>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <i class="fa-solid fa-envelope-open-text"></i>
+                            <h4 class="contact-info-title">Email Us</h4>
+                            <p class="contact-info-text">General: care@shewear.com<br>Verifications:
+                                support@shewear.com</p>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <i class="fa-solid fa-location-arrow"></i>
+                            <h4 class="contact-info-title">Location</h4>
+                            <p class="contact-info-text">Fashion District, Soho<br>London, United Kingdom</p>
+                        </div>
+
+                        <div class="mt-5 pt-4 border-top">
+                            <h4 class="contact-info-title mb-4">Follow Our Journey</h4>
+                            <div class="social-links d-flex">
+                                <a href="#" class="me-4"><i class="fa-brands fa-instagram fa-lg"></i></a>
+                                <a href="#" class="me-4"><i class="fa-brands fa-facebook fa-lg"></i></a>
+                                <a href="#" class="me-4"><i class="fa-brands fa-pinterest fa-lg"></i></a>
+                                <a href="#"><i class="fa-brands fa-tiktok fa-lg"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 p-4 bg-white shadow-sm border">
+                            <h4 class="contact-info-title mb-3">Priority Support</h4>
+                            <p class="small text-muted">Already verified? Log in to your account for priority styling
+                                advice and faster response times.</p>
+                            <a href="#" class="btn btn-outline-dark btn-sm w-100 mt-2">Log In</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <h4 class="footer-heading">Help & Information</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Returns Policy</a></li>
+                        <li><a href="#">How To Return</a></li>
+                        <li><a href="#">Student Discount</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <h4 class="footer-heading">About</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">As Seen In The Press</a></li>
+                        <li><a href="#">Modern Slavery Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <h4 class="footer-heading">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Press Enquiries</a></li>
+                        <li><a href="mailto:care@shewear.com">care@shewear.com</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-4 text-center text-md-start">
+                    <h4 class="footer-heading">Follow Us</h4>
+                    <div class="social-links align-items-center">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                    </div>
+                    <div class="mt-4">
+                        <i class="fa-brands fa-cc-visa fa-2x me-2"></i>
+                        <i class="fa-brands fa-cc-mastercard fa-2x me-2"></i>
+                        <i class="fa-brands fa-cc-amex fa-2x me-2"></i>
+                        <i class="fa-brands fa-cc-paypal fa-2x"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright text-center">
+                <p>Copyright © 2024 SheWear.com. All rights reserved. | <a href="#">Terms & Conditions</a> | <a
+                        href="#">Privacy & Cookies</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="navigation.js"></script>
+</body>
+
+</html>
